@@ -53,13 +53,15 @@ class Advisor(private val meta: Meta) {
             .firstOrNull { it in 0..99 }
     }
 
-    fun advise(lines: List<OcrLine>): List<String> {
+    fun advise(lines: List<OcrLine>, extraShop: List<Troop> = emptyList(), forced: Build? = null): List<String> {
         val shop = ArrayList<Troop>()
         val field = ArrayList<Troop>()
         for (l in lines) {
             val t = findTroop(l.text) ?: continue
             if (l.cy >= meta.shopTop) shop.add(t) else field.add(t)
         }
+
+        for (t in extraShop) shop.add(t)
 
         val out = ArrayList<String>()
         val elixir = readElixir(lines)
@@ -71,13 +73,13 @@ class Advisor(private val meta: Meta) {
         }
 
         // 1. Какая сборка подходит к тому, что уже стоит на поле
-        val build = meta.builds.maxByOrNull { b ->
+        val build = forced ?: meta.builds.maxByOrNull { b ->
             b.traits.sumOf { traitCount[it] ?: 0 }.toDouble() + (tierRank[b.tier] ?: 0.0) * 0.3
         }
         val target = build?.traits ?: emptyList()
         if (build != null) {
             val ruler = if (build.ruler.isNotBlank()) " · ${build.ruler}" else ""
-            out.add("Сборка: ${build.name} [${build.tier}]$ruler")
+            out.add("Сборка: ${build.name} [${build.tier}]$ruler" + (if (forced != null) " 🔒" else ""))
             if (build.notes.isNotBlank()) out.add(build.notes)
         }
         if (elixir != null) out.add("Эликсир: $elixir")
@@ -120,7 +122,7 @@ class Advisor(private val meta: Meta) {
         if (eq.isNotEmpty()) out.add("Снаряжение: ${eq.joinToString(", ")} → на кэрри основной черты")
 
         if (shop.isEmpty() && field.isEmpty()) {
-            out.add("Войска не распознаны. Открой матч Merge Tactics (язык игры — English) или включи отладку 🐞.")
+            out.add("Магазин не распознан. Нажми 📷 и научи помощника карточкам (🐞 — отладка).")
         }
         return out
     }

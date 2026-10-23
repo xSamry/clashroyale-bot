@@ -2,6 +2,7 @@
   "season": "11",
   "updated": "2026-10-23",
   "todo": "Данные собраны из открытых тир-листов и гайдов (seemeta.com, mergetacticsbuild.com, playhub.com) и частично противоречат друг другу. Проверь и поправь стоимости/черты/тиры под свой сезон. У Hog Rider и Dark Prince не подтверждены стоимость и черта.",
+  "matchThreshold": 0.85,
   "regions": {
     "shopTop": 0.78,
     "elixir": null

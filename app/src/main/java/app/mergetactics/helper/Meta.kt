@@ -14,7 +14,8 @@ data class Meta(
     val equipment: List<String>,
     val orbTips: List<String>,
     val shopTop: Float,
-    val elixirRegion: FloatArray?
+    val elixirRegion: FloatArray?,
+    val matchThreshold: Float
 )
 
 object MetaLoader {
@@ -65,6 +66,6 @@ object MetaLoader {
         val shopTop = r?.optDouble("shopTop", 0.78)?.toFloat() ?: 0.78f
         val er = r?.optJSONArray("elixir")
         val elixir = if (er != null && er.length() == 4) FloatArray(4) { er.getDouble(it).toFloat() } else null
-        return Meta(o.optString("season", "?"), o.optString("updated", "?"), troops, builds, equipment, orbTips, shopTop, elixir)
+        return Meta(o.optString("season", "?"), o.optString("updated", "?"), troops, builds, equipment, orbTips, shopTop, elixir, o.optDouble("matchThreshold", 0.85).toFloat())
     }
 }
