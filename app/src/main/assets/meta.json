@@ -1,0 +1,47 @@
+{
+  "season": "11",
+  "updated": "2026-10-23",
+  "todo": "Данные собраны из открытых тир-листов и гайдов (seemeta.com, mergetacticsbuild.com, playhub.com) и частично противоречат друг другу. Проверь и поправь стоимости/черты/тиры под свой сезон. У Hog Rider и Dark Prince не подтверждены стоимость и черта.",
+  "regions": {
+    "shopTop": 0.78,
+    "elixir": null
+  },
+  "troops": [
+    {"name": "Hog Rider",      "cost": null, "trait": "Rider",  "tier": "S"},
+    {"name": "Dark Prince",    "cost": null, "trait": null,     "tier": "S"},
+    {"name": "Knight",         "cost": 2,    "trait": "Noble",  "tier": "B"},
+    {"name": "Bomber",         "cost": 2,    "trait": "Undead", "tier": null},
+    {"name": "Royal Ghost",    "cost": 2,    "trait": "Undead", "tier": null},
+    {"name": "Bandit",         "cost": 3,    "trait": "Forest", "tier": "B"},
+    {"name": "Giant",          "cost": 3,    "trait": "Clan",   "tier": "B"},
+    {"name": "Giant Skeleton", "cost": 3,    "trait": "Undead", "tier": "B"},
+    {"name": "Goblin Cage",    "cost": 3,    "trait": "Goblin", "tier": "B"},
+    {"name": "Royal Giant",    "cost": 3,    "trait": "Noble",  "tier": "B"},
+    {"name": "Valkyrie",       "cost": 3,    "trait": "Clan",   "tier": "B"},
+    {"name": "Witch",          "cost": 3,    "trait": "Undead", "tier": "B"},
+    {"name": "Goblin Machine", "cost": 4,    "trait": "Goblin", "tier": "B"},
+    {"name": "Golden Knight",  "cost": 4,    "trait": "Noble",  "tier": "B"},
+    {"name": "Skeleton King",  "cost": 4,    "trait": "Undead", "tier": "B"}
+  ],
+  "builds": [
+    {"name": "Rider", "ruler": "Spirit Empress", "traits": ["Rider"], "tier": "S",
+     "notes": "Тир-лист S11: Rider — сильнейшая черта, Spirit Empress — топ-рулер."},
+    {"name": "Full Undead", "ruler": "Spirit Empress", "traits": ["Undead"], "tier": "A",
+     "notes": "Не опускай Undead с 4 до 3 — теряешь бонус. Дешёвых Undead можно крутить и продавать."},
+    {"name": "Noble + Forest", "ruler": "", "traits": ["Noble", "Forest"], "tier": "A",
+     "notes": "Универсальная сборка (база сборок S10)."},
+    {"name": "Noble + Clan", "ruler": "", "traits": ["Noble", "Clan"], "tier": "A",
+     "notes": "Простая и стабильная; с Dagger Duchess хороша против Undead."},
+    {"name": "Tomb Queen Undead", "ruler": "Tomb Queen", "traits": ["Undead"], "tier": "B",
+     "notes": "Хорошо масштабируется к поздним раундам."}
+  ],
+  "equipment": [
+    "Maiden's Shield", "Prince's Lance", "Fisherman's Hook", "Valkyrie's Axe",
+    "Assassin Blade", "Juggernaut Armor", "Ranger Crossbow", "Superstar Ring",
+    "Clan Horn", "Forest Flute", "Goblin Lute", "Noble Trumpet", "Undead Drum"
+  ],
+  "orbTips": [
+    "Сфера 1: 3 эликсира + снаряжение. Сфера 2: 6 эликсира + снаряжение сильнее. Сфера 3: +1 место в команде и 3★ войско.",
+    "Инструмент-черта (Horn/Flute/Lute/Trumpet/Drum) бери, только если он поднимает черту на следующий порог; иначе — эликсир или босс/3★ войско."
+  ]
+}
